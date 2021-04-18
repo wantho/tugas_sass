@@ -1,0 +1,383 @@
+@import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap");
+
+$image-item : (
+  1: url("images/desktop/image-deep-earth.jpg"),
+  2: url("images/desktop/image-night-arcade.jpg"),
+  3: url("images/desktop/image-soccer-team.jpg"),
+  4: url("images/desktop/image-grid.jpg"),
+  5: url("images/desktop/image-from-above.jpg"),
+  6: url ("images/desktop/image-pocket-borealis.jpg"),
+  7: url("images/desktop/image-curiosity.jpg"),
+  8: url("images/desktop/image-fisheye.jpg")
+  );
+
+body {
+  min-width: 447px;
+ 
+}
+
+.jumbotron {
+  background-image: url("../images/desktop/image-hero.jpg");
+  padding-bottom: 288px;
+  margin-bottom: 160px;
+
+  nav {
+    padding-top: 64px;
+    padding-bottom: 64px;
+    display: flex;
+    justify-content: space-between;
+    a{
+      display: inline-block;
+      margin-left: 1%;
+      color: white;
+      text-decoration: none;
+      position: relative;
+     
+         
+    }
+
+  }
+
+  
+}
+
+.container {
+  padding-left: 30px;
+  padding-right: 30px;
+
+  
+}
+
+
+.header{
+  width: 80%;
+  height:auto;
+  .interactive{
+    margin-left: 80px;
+    margin-top: -80px;
+  }
+  .text_interactive{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: white;
+    height: auto;
+    align-items: center;
+    top:-300px;
+    margin-left: 650px;
+    
+    h2{
+      display: inline-block;
+      width: 50%;
+      height:50%;
+      justify-items: left;
+      margin: 50px;
+      padding-bottom: 10px;
+    }
+
+    p{
+      width:50%;
+      height: 80%;
+      justify-items: left;
+      margin:30px;
+      padding: 30px;
+    }  
+  }
+}
+
+.creations{
+  width: 100%;
+  margin-top:-250px;
+  margin-bottom: -30px;
+  margin-left: 50px;
+  h2{
+    font-size: 30px;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-left: 30px;
+    button{
+     
+     float: right;
+     margin-right: 130px;
+      
+    }
+  }
+}
+
+.content{
+  width:100%;
+  display:flex;
+  flex-wrap: wrap;
+  margin-left: 40px;
+  .content-item{
+    width:20%;
+    height:400px;
+    margin:30px 30px 30px 0.5%;
+    
+    cursor: pointer;
+    transition: 0.5s;
+    h4{
+      position: absolute;
+      display: flex;
+      width:100px;
+      height: 50px;
+      
+      left:40px;
+      color:white;
+      bottom:50px;
+    }
+    
+    &:hover{
+      
+      
+      transform: scale(1.1);
+    }
+  }
+  .image{
+    width:95%;
+    justify-content: center;
+    margin:0px 30px;
+    height:auto;
+    background-position: center;
+    background-size: 80%;
+    background-repeat: no-repeat ;
+    
+    
+  }
+
+  @each $index, $image in $image-item{
+    &:nth-child(#{$index}){
+      .image{
+        background-image: url(#{image});
+      }
+    }
+  } 
+
+
+} 
+
+
+footer {
+  padding-top: 70px;
+  padding-bottom: 75px;
+  background-color: black;
+
+  #footer-logo {
+    margin-bottom: 33px;
+  }
+
+  #footer-links {
+    list-style-type: none;
+    li {
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+
+  #footer-text {
+    color: #7a7a7a;
+    a {
+      color: aqua;
+    }
+  }
+}
+
+@media screen and (max-width: 478px) {
+
+  .clear{
+    clear:left;
+  }  
+  .container{
+    width:100%;
+    display: block;
+    background-size: cover;
+    #hamburger{
+      display: flex;
+    }
+    nav{
+      a{
+        display:none;
+      }
+    }
+    h1{
+      width:80%;
+      height:auto;
+      color:white;
+      border: 1px solid white;
+      margin:10px;
+      padding:10px;
+    }
+  }
+  
+  body {
+    text-align: center;
+  }
+
+  .header{
+    width:100%;
+    .interactive{
+      width:100%;
+      display: flex;
+      flex-flow: row nowrap;
+      position: relative;    
+      padding-right: 20px;
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    .text_interactive{
+      width:100%;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between;
+      top: -10px;
+      left: -600px;
+      h2{
+        top:-10px;
+        text-align: center;
+        
+        margin:20px;
+        
+      }
+
+      p{
+        bottom: -300px;
+        top: 10px;
+        display: flex;
+        justify-content: left;
+        
+
+      }
+    }
+    
+    .creations{
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: flex-end;
+      z-index: -1;
+      
+
+    }
+
+    .content-item{
+      display: grid;
+      position: absolute;
+
+    }
+
+    .image{
+      display:inline-block;
+      position: relative;
+      grid-template-columns: 1fr;
+    }
+
+
+  }
+    
+ 
+  #footer-links {
+    text-align: center;
+    li {
+      padding-top: 27px;
+      padding-bottom: 27px;
+    }
+  }
+
+  .hide-mobile {
+    display: none;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  #social-media {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    margin: 45px auto 27px auto;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .hide-desktop {
+    display: none;
+  }
+
+  .jumbotron {
+    background-image: url("../images/desktop/image-hero.jpg");
+    background-repeat: none;
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 145px;
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      #logo {
+        flex-basis: 50%;
+        text-align: left;
+      }
+
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    }
+
+    .motto {
+      width: 652px;
+      text-align: left;
+      h1 {
+        font-size: 4.5rem;
+        color:white;
+        border: 1px solid white;
+        padding-left: 20px;
+      }
+    }
+  }
+
+  .container {
+    width: 1115px;
+    margin: 0 auto;
+  }
+
+  .col {
+    width: 49%;
+    display: inline-block;
+  }
+
+  #hamburger {
+    display: none;
+  }
+
+ 
+  footer {
+    #social-media {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 30px;
+      li {
+        margin-left: 20px;
+      }
+    }
+
+    #footer-links {
+      display: flex;
+      li {
+        margin-right: 20px;
+      }
+    }
+
+    #footer-text {
+      text-align: right;
+    }
+  }
+}
